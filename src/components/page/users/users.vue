@@ -6,11 +6,12 @@
                                                             separator-class：分隔符号
                                                           el-breadcrumb-item：面包屑选项
                                                          -->
-    <el-breadcrumb separator-class="el-icon-remove-outline">
+    <!-- <el-breadcrumb separator-class="el-icon-remove-outline">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>用户管理</el-breadcrumb-item>
       <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-    </el-breadcrumb>
+    </el-breadcrumb> -->
+    <mybread firstnav="用户管理" lastnav="用户列表" />
     <!-- 搜索区域 -->
     <!-- 
                                                         el-input：输入框

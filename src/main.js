@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Element from 'element-ui'
+import MyBread from '@/layout/bread.vue'
 // import axios from 'axios'
 import myaxios from '@/assets/js/myaxios.js'
 import 'element-ui/lib/theme-chalk/index.css'
@@ -16,12 +17,10 @@ import '@/assets/css/index.css'
 Vue.use(myaxios)
 Vue.use(Element)
 
-Vue.config.productionTip = false;
+// 注册全局面包屑导航组件
+Vue.component(MyBread.name, MyBread)
 
-var a = true
-if (a === true) {
-  console.log('aa');
-}
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 // 创建一个vue实例
