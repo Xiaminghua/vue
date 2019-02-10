@@ -189,11 +189,7 @@ export default {
   methods: {
     // 得到列表数据
     async getAllList() {
-      var res = await this.$http.get(`/users?query=${this.search}&pagenum=${this.pagenum}&pagesize=${this.pagesize}`, {
-        headers: {
-          "Authorization": window.localStorage.getItem('token')
-        }
-      })
+      var res = await this.$http.get(`/users?query=${this.search}&pagenum=${this.pagenum}&pagesize=${this.pagesize}`)
       var { meta, data } = res.data
       if (meta.status === 200) {
         // 将数据源保存起来
@@ -229,9 +225,6 @@ export default {
           password: this.addObj.password,
           email: this.addObj.email,
           mobile: this.addObj.mobile
-        },
-        headers: {
-          "Authorization": window.localStorage.getItem('token')
         }
       })
       var { meta } = res.data
@@ -264,10 +257,7 @@ export default {
     async statuChange(id, type) {
       var res = await this.$http.request({
         url: `/users/${id}/state/${type}`,
-        method: 'put',
-        headers: {
-          "Authorization": window.localStorage.getItem('token')
-        }
+        method: 'put'
       })
       var { meta } = res.data
       if (meta.status === 200) {
@@ -285,10 +275,7 @@ export default {
       // 根据 id 得到数据
       var res = await this.$http.request({
         url: `/users/${id}`,
-        method: 'get',
-        headers: {
-          "Authorization": window.localStorage.getItem('token')
-        }
+        method: 'get'
       })
       var { meta, data } = res.data
       if (meta.status === 200) {
@@ -302,9 +289,6 @@ export default {
       var res = await this.$http.request({
         url: `/users/${this.editObj.id}`,
         method: 'put',
-        headers: {
-          "Authorization": window.localStorage.getItem('token')
-        },
         data: {
           email: this.editObj.email,
           mobile: this.editObj.mobile
@@ -359,10 +343,7 @@ export default {
       this.getDropDown()
       var res = await this.$http.request({
         url: `/users/${id}`,
-        method: 'get',
-        headers: {
-          "Authorization": window.localStorage.getItem('token')
-        }
+        method: 'get'
       })
       var { meta, data } = res.data
       if (meta.status === 200) {
@@ -376,10 +357,7 @@ export default {
     async getDropDown() {
       var res = await this.$http.request({
         url: 'roles',
-        method: 'get',
-        headers: {
-          "Authorization": window.localStorage.getItem('token')
-        }
+        method: 'get'
       })
       var { meta, data } = res.data
       if (meta.status === 200) {

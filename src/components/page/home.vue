@@ -28,14 +28,14 @@ export default {
         SideBar
     },
     beforeCreate() {
-        // 1.0 验证是否： token
-        var token = window.localStorage.getItem('token')
-        if (!token) {
-            // 跳转回登录页面
-            this.$message.error('您还没有登录，请先登录')
-            this.$router.push('/login')
-            return
-        } 
+        // // 1.0 验证是否： token
+        // var token = window.localStorage.getItem('token')
+        // if (!token) {
+        //     // 跳转回登录页面
+        //     this.$message.error('您还没有登录，请先登录')
+        //     this.$router.push('/login')
+        //     return
+        // } 
     }
 }
 </script>

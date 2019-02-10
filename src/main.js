@@ -7,6 +7,7 @@ import Element from 'element-ui'
 import MyBread from '@/layout/bread.vue'
 // import axios from 'axios'
 import myaxios from '@/assets/js/myaxios.js'
+import moment from 'moment'
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/index.css'
 
@@ -19,6 +20,9 @@ Vue.use(Element)
 
 // 注册全局面包屑导航组件
 Vue.component(MyBread.name, MyBread)
+Vue.filter('dateformat', function(value) {
+  return moment(value).format('YYYY-MM-DD hh:mm:ss')
+})
 
 Vue.config.productionTip = false;
 
